@@ -1,0 +1,24 @@
+
+.context_common_home
+  padding: 0
+  padding-top: 3.5rem
+  max-width: 100%
+  .canvas_home
+    height: calc(100vh - 56px)
+    overflow: hidden
+    position: relative
+    .raining
+      display: block
+    .backimg
+      position: absolute
+      left: 0
+      top: 0
+      responsiveStyle(background, url('../images/canvas_home_bg_mobile.jpg'), url('../images/canvas_home_bg.jpg'))
+      responsiveStyle(background-size, 100% 100%, initial)
+      height: 100%
+      width: 100%
+      opacity: 0.3
+    .audio
+      position: absolute
+      left: 0
+      top: 0

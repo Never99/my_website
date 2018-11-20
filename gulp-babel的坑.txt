@@ -1,0 +1,21 @@
+安装最新版本的gulp-babel 会提示Cannot find module '@babel/core'
+建议gulp-babel安装版本为"gulp-babel": "^7.0.1",
+用@下载指定安装包 例：gulp-babel@7.0.1
+以及包"babel-core": "^6.26.3"      "babel-preset-es2015": "^6.24.1"  
+配置项：
+gulp.task('scss', function () {
+  return gulp.src(入口文件)
+              .pipe(babel({
+      	presets:['es2015']
+              }))
+    .pipe(gulp.dest(出口文件));
+});
+
+
+git初始化上传文件
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Never99/my_objects.git
+git push -u origin master

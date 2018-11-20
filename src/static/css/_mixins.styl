@@ -1,0 +1,21 @@
+$screenWidth = {
+    'mobile':240px,
+     'pc': 780px,
+     'pcmax': 1140px
+}
+mediaStyle($screen = pc, $styleName, $styleDetail)
+    $width = $screenWidth[$screen];
+    @media screen and (min-width: $width)
+        if ($styleName == ama) {
+            if ($styleDetail!= "") {
+                ama($styleDetail);
+            } else {
+                ama();
+            }
+        } else {
+            {$styleName}: $styleDetail
+        }
+responsiveStyle($stylename, $mobile, $pc)
+    {$stylename}: $pc
+    mediaStyle(mobile, $stylename, $mobile)
+    mediaStyle(pc, $stylename, $pc)

@@ -1,0 +1,26 @@
+include ./footer
+
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    meta(content="never", name="referrer")
+    title my_websit
+    link(rel="shortcut icon", href="/static/images/bitbug_favicon.ico", type="image/x-icon")
+    link(href="/static/css/all_style.css", rel="stylesheet")
+    script(src="/static/plugin/jquery-3.3.1.min.js")
+  body
+    #app
+      .header
+        .head_logo
+        .list_a
+          a(data-href="/" href="javascript:;")  首页
+          a(data-href="/about" href="javascript:;") 红尘画卷
+          a(data-href="/joinus" href="javascript:;") 指染浮华
+          a(data-href="/newscenter" href="javascript:;") 斜揽残萧
+        .head_menu
+      .content_wrapper
+        block content
+      +footer()
+script(src="/static/js/z_common.js")

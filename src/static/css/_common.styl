@@ -1,0 +1,168 @@
+*
+  padding: 0
+  margin: 0
+  list-style: none
+  text-decoration: none
+  box-sizing: border-box
+
+html, body 
+  width: 100%
+  height: 100%
+  font-family: 'Helvetica Neue','Helvetica','Arial','PingFang SC','Microsoft YaHei','Hiragino Sans GB','Heiti SC','sans-serif'
+
+#app
+  width: 100%
+  height: 100%
+
+// header
+.header
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 10
+  width: 100%
+  height: 56px
+  line-height: 56px
+  color: #fff
+  background: #282830
+  display: flex
+  justify-content: space-between
+  responsiveStyle(padding, 0 1rem, 0 50px)
+  cursor: default
+  /* background: linear-gradient(90deg,#1c1843 0,#1c1843 22%,#435080 57%,#435080 78%,#2ab1c7) */
+  .head_logo
+    width: 200px
+    height: 100%
+    background: url(../images/head_logo.png)
+    background-size: 100% 100%
+  .list_a
+    responsiveStyle(width, 100%, auto)
+    responsiveStyle(height, 100%, auto)
+    responsiveStyle(position, fixed, static)
+    display: flex
+    flex-direction: flex
+    right: -100%
+    top: 56px
+    transition: right .5s linear
+    background: #282830
+    color: #fff
+    &.list_a_menu
+      flex-direction: column
+      right: 0
+      transition: right .5s linear
+      a
+        width: 100%
+        display: block
+    a
+      responsiveStyle(display, none, block)
+      border-radius: 5px
+      color: #fff
+      width: 100px
+      height: 50px
+      line-height: 50px
+      responsiveStyle(margin, 0, 3px 10px)
+      text-align: center
+      &.active
+        background: #ffffff
+        color: #000
+      &:hover
+        background: #ffffff
+        color: #000
+  .head_menu
+    responsiveStyle(display, block, none)
+    position: absolute
+    right: 10px
+    bottom: 10px
+    width: 30px
+    height 30px
+    background: url('../images/head_menu.png')no-repeat
+    background-size: 100%
+    transition: background .7s linear
+    &.menu_close
+      background: url('../images/menu_close.png')no-repeat
+      background-size: 100%
+      transition: background .7s linear
+// 内容区域
+.content_wrapper
+  width: 100%
+  transition: all .5s linear
+  transform: translateX(0)
+  &.content_wrapper_menu
+    transition: all .5s linear
+    transform: translateX(-100%)
+// banner图
+.banner
+  responsiveStyle(height, 16rem, 400px)
+  responsiveStyle(line-height, 16rem, 400px)
+  text-align: center
+  color: #fff
+  cursor: default
+  &.home-banner
+    background: url('../images/home_bg.jpg')no-repeat
+    background-position: 50%
+  &.about-banner
+    background: url('../images/about_bg.jpg')no-repeat
+    background-position: 40%
+  &.newscenter-banner
+    background: url('../images/newscenter_bg.jpg')no-repeat
+    background-position: 50%
+  &.joinus-banner
+    background: url('../images/joinus_bg.jpg')no-repeat
+    background-position: 50%
+  h1
+    responsiveStyle(font-size, 1.5rem, 32px)
+.context_common
+  responsiveStyle(padding, 1rem 0, 50px 0)
+  responsiveStyle(max-width, 87%, 1200px)
+  margin: 0 auto
+  h3
+    line-height: 80px
+    text-align: center
+  p
+    text-indent: 2em
+    line-height: 24px
+    margin-bottom: 20px
+// 页脚
+.footer
+  color: #888
+  responsiveStyle( height, 14rem, 225px)
+  responsiveStyle( padding, 0 1rem, 0 30px)
+  display: flex
+  flex-direction: column
+  background: #171717
+  transition: all .5s linear
+  transform: translateX(0)
+  &.footer_menu
+    transition: all .5s linear
+    transform: translateX(-100%)
+  .compmay
+    width: 100%
+    max-width: 1200px
+    flex: 1
+    display: flex
+    margin: 0 auto
+    div
+      flex: 1
+      text-align: center
+      responsiveStyle( padding, 0 1rem, 0 30px)
+      color: #fff
+      font-size: 14px
+      p
+        line-height: 30px
+  .beian
+    height: 40px
+    line-height: 40px
+    text-align: center
+    margin: 0 auto
+    font-size: 14px
+    display: flex
+    align-items: center
+    .footer_hide
+      responsiveStyle(display, none, block)
+    a
+      color: #888
+      margin: 0 5px
+      &:hover
+        text-decoration: underline
+    img
+      margin: 0 10px

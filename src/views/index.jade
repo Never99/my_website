@@ -1,0 +1,14 @@
+extends _common/layout
+
+//- include _common/banner
+
+block content
+  #home.home
+    //- +banner({__data: {title: '首页'}, __class: 'home-banner'})
+    .context_common.context_common_home
+      .canvas_home
+        canvas.raining
+        .backimg
+        audio#audio(loop="loop", preload="auto")
+          source(src="../static/musics/light_years_away.mp3" type="audio/mpeg")
+  script(src="../static/js/home.js")
