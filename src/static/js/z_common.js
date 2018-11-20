@@ -9,6 +9,8 @@ $(function () {
     $(".list_a a").eq(2).addClass("active");
   } else if ($('#newscenter').length == 1) {
     $(".list_a a").eq(3).addClass("active");
+  }else if ($('#research').length == 1) {
+    $(".list_a a").eq(4).addClass("active");
   }
 
   $(".head_logo").click(function() {

@@ -30,19 +30,22 @@ gulp.task('jade2html', function () {
     .pipe(gulp.dest('./dist'))
 })
 
-// // 压缩css
-// gulp.task("minifycss", function () {
-//   return gulp.src('./src/static/css/*.css')
-//     .pipe(minifycss())
-//     .pipe(concat('all_style.css'))
-//     .pipe(gulp.dest('dist/static/css'))
-// })
+// 压缩css
+gulp.task("minifycss", function () {
+  return gulp.src('./src/static/css/*.css')
+    .pipe(minifycss())
+    .pipe(rename({suffix: '.min'}))
+    // .pipe(concat('all_style.css'))
+    .pipe(gulp.dest('dist/static/css'))
+})
 
 // 压缩styl
 gulp.task("stylus", function () {
   return gulp.src('./src/static/css/main.styl')
-    .pipe(stylus())
-    .pipe(concat('all_style.css'))
+    .pipe(stylus()) //编译为css
+    .pipe(minifycss()) //压缩css
+    // .pipe(rename({suffix: 'all_style.min'}))
+    .pipe(concat('all_style.min.css'))
     .pipe(gulp.dest('dist/static/css'))
 })
 
@@ -118,7 +121,7 @@ function handleErrors() {
 
 // 执行任务
 gulp.task('dev', function () {
-  runSequence('del', [ 'jade2html', 'stylus', 'minifyJs', 'copy', 'images', 'musics'], 'browserSync', 'watch')
+  runSequence('del', [ 'jade2html', 'stylus','minifycss', 'minifyJs', 'copy', 'images', 'musics'], 'browserSync', 'watch')
 })
 
 
@@ -182,5 +185,5 @@ gulp.task('sftp', function () {
 });
 // 启动打包程序
 gulp.task('build',function(){
-  runSequence('del',['minifyHtml', 'images', 'jqcopy', 'stylus', 'minifyJs', 'musics'],'sftp')
+  runSequence('del',['minifyHtml', 'minifycss', 'images', 'jqcopy', 'stylus', 'minifyJs', 'musics'],'sftp')
 });

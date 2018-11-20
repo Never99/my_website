@@ -1,3 +1,104 @@
-include ../_common/layout
-  block content
-    #newscenter.newscenter 斜揽残萧
+extends ../_common/layout
+
+include ../_common/banner
+
+block content
+  #research.research
+    +banner({__data: {title: '落寒初忆'}, __class: 'research-banner'})
+    .context_common.context_common_research(style="height: 800px")
+      #multi-select-2.city-select
+        input.input-search(type="text", placeholder="请选择城市")
+
+  script(src="../../static/js/city.min.js")
+  script(src="../../static/js/city_init.js")
+  script.
+    $(function() {
+        // 单选
+        //- var singleSelect1 = $('#single-select-1').citySelect({
+        //-     dataJson: cityData,
+        //-     multiSelect: false,
+        //-     whole: false,
+        //-     shorthand: true,
+        //-     search: true,
+        //-     onInit: function() {
+        //-         console.log(this)
+        //-     },
+        //-     onTabsAfter: function(target) {
+        //-         console.log(target)
+        //-     },
+        //-     onCallerAfter: function(target, values) {
+        //-         console.log(JSON.stringify(values))
+        //-     }
+        //- });
+
+        // // 单选设置城市
+        // singleSelect1.setCityVal('北京市');
+
+        // // 单选
+        // var singleSelect2 = $('#single-select-2').citySelect({
+        //     dataJson: cityData
+        // });
+
+        // // 单选设置城市
+        // singleSelect2.setCityVal('北京市');
+
+        // // 禁止点击显示的接口
+        // singleSelect2.status('readonly');
+
+        // //单选
+        // var singleSelect3 = $('#single-select-3').citySelect({
+        //     dataJson: cityData
+        // });
+
+        // // 单选设置城市
+        // singleSelect3.setCityVal('广州市');
+
+        // // 禁止点击显示的接口
+        // singleSelect3.status('disabled');
+
+        // // 多选
+        // var MulticitySelect1 = $('#multi-select-1').citySelect({
+        //     dataJson: cityData,
+        //     multiSelect: true,
+        //     multiMaximum: 6,
+        //     search: false,
+        //     onInit: function() {
+        //         console.log(this)
+        //     },
+        //     onForbid: function() {
+        //         console.log(this)
+        //     },
+        //     onTabsAfter: function(target) {
+        //         console.log(event)
+        //     },
+        //     onCallerAfter: function(target, values) {
+        //         console.log(JSON.stringify(values))
+        //     }
+        // });
+
+        // // 多选设置城市接口
+        // MulticitySelect1.setCityVal('北京市, 天津市, 上海市, 广州市, 长沙市, 唐山市');
+
+        // 多选-自定义热门城市-搜索
+        var MulticitySelect2 = $('#multi-select-2').citySelect({
+            dataJson: cityData,
+            multiSelect: true,
+            search: true,
+            multiType: 1,
+            hotCity: ['北京市', '上海市', '广州市', '深圳市', '南京市', '杭州市', '天津市', '重庆市', '成都市', '青岛市'],
+            onInit: function() {
+                console.log(this)
+            },
+            onForbid: function() {
+                console.log(this)
+            },
+            onTabsAfter: function(target) {
+                console.log(event)
+            },
+            onCallerAfter: function(target, values) {
+                console.log(values.name)
+            }
+        });
+        // 多选设置城市接口
+        // MulticitySelect2.setCityVal('北京市, 天津市, 上海市, 广州市, 长沙市, 唐山市');
+    });
