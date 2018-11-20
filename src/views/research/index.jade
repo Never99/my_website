@@ -5,13 +5,18 @@ include ../_common/banner
 block content
   #research.research
     +banner({__data: {title: '落寒初忆'}, __class: 'research-banner'})
-    .context_common.context_common_research(style="height: 800px")
-      #multi-select-2.city-select
-        input.input-search(type="text", placeholder="请选择城市")
+    .context_common.context_common_research(style="height: 500px; display: flex")
+      .city_sle(style="float: left")
+        #multi-select-2.city-select
+            input(type="text", placeholder="请选择城市")
+      .laydate(style="float: left; margin-left: 100px")
+        input#myDate.flatpickr(type="text", style="width: 240px; height: 43px; text-indent: 1em;", placeholder="请选择时间")
 
+  script(src="../../static/js/flatpickr.min.js")
   script(src="../../static/js/city.min.js")
   script(src="../../static/js/city_init.js")
   script.
+    document.getElementById("myDate").flatpickr();
     $(function() {
         // 单选
         //- var singleSelect1 = $('#single-select-1').citySelect({
@@ -83,7 +88,7 @@ block content
         var MulticitySelect2 = $('#multi-select-2').citySelect({
             dataJson: cityData,
             multiSelect: true,
-            search: true,
+            search: false,
             multiType: 1,
             hotCity: ['北京市', '上海市', '广州市', '深圳市', '南京市', '杭州市', '天津市', '重庆市', '成都市', '青岛市'],
             onInit: function() {
