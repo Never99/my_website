@@ -3,7 +3,10 @@
   height: 43px;
   text-indent: 1em;
   cursor: pointer;
-  z-index: 1
+  z-index: 1;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #fcfcfc;
 }
 
 .flatpickr-mobileInput {
