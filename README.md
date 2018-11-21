@@ -24,5 +24,10 @@ src/views 文件放的是jade模板  （_common为公共文件）
 .config 配置服务器信息
 .gitignore 配置不上传的文件
 
+
+#使用的插件
+  flatpickr 时间控件 （可配置）
+  citySelect 城市控件 （可配置多选 or 单选）
+
 本项目使用gulp进行打包、编译、压缩等操作
 

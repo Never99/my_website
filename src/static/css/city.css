@@ -132,7 +132,8 @@
     border: 1px solid #ccc;
     background-color: #fcfcfc;
     cursor: pointer;
-    width: 280px;
+    width: 100%;
+    /* width: 280px; */
     overflow: hidden;
     padding: 8px;
     padding-top: 0;
@@ -293,7 +294,8 @@
 
 .city-select .city-pavilion {
     box-shadow: 0 2px 5px #ddd;
-    width: 468px
+    width: 100%;
+    /* width: 468px */
 }
 
 .city-select .city-tabs {
@@ -367,7 +369,8 @@
 
 .city-select .city-cont dd {
     font-size: 14px;
-    width: 421px;
+    width: 100%;
+    /* width: 421px; */
     margin-top: -10px;
     margin-left: -10px;
     padding-bottom: 20px
@@ -542,7 +545,7 @@
     left: 50%;
     line-height: 36px;
     margin-left: -50px;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#B200000, endColorstr=#B200000);
+    /* filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#B200000, endColorstr=#B200000); */
     transition-duration: 400ms;
     transform: translateY(0);
     opacity: 1;
