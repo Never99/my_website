@@ -21,8 +21,19 @@ $(function() {
         pHtml.forEach(val => {
           html += `<p>${val.text}</p>`;
         });
-        $(".joinus_detail_context").html(html);
+        $(".story_detail_context").append(html);
       }
     })
   }
+
+  // 返回列表页
+  $("button.to_back").click(function() {
+    onBackKeyDown();
+  })
+
+  function onBackKeyDown() {
+    location.href = "/story";
+  }
+  // 安卓物理键
+  document.addEventListener("backbutton", onBackKeyDown, false);
 })

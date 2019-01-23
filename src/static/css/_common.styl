@@ -107,8 +107,8 @@ html, body
   &.newscenter-banner
     background: url('../images/newscenter_bg.jpg')no-repeat
     background-position: 50%
-  &.joinus-banner
-    background: url('../images/joinus_bg.jpg')no-repeat
+  &.story-banner
+    background: url('../images/story_bg.jpg')no-repeat
     background-position: 50%
   &.research-banner
     background: url('../images/research_bg.jpg')no-repeat
@@ -130,7 +130,7 @@ html, body
 // 页脚
 .footer
   color: #888
-  responsiveStyle( height, 14rem, 225px)
+  // responsiveStyle( height, 14rem, 225px)
   responsiveStyle( padding, 0 1rem, 0 30px)
   display: flex
   flex-direction: column
@@ -144,8 +144,16 @@ html, body
     width: 100%
     max-width: 1200px
     flex: 1
-    display: flex
+    responsiveStyle( display, block, flex)
     margin: 0 auto
+    padding:  30px 0
+    .foot_l
+      h3
+        responsiveStyle(line-height, 5rem, 100px)
+      img 
+        width: 100px
+        border-radius: 100%
+        margin-bottom: 20px
     div
       flex: 1
       text-align: center

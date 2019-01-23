@@ -3,14 +3,14 @@ extends ../_common/layout
 include ../_common/banner
 
 block content
-  #joinus.joinus
-    +banner({__data: {title: '指染浮华'}, __class: 'joinus-banner'})
-    .context_common.context_common_joinus
-      ul.joinus_list_header
+  #story.story
+    +banner({__data: {title: '指染浮华'}, __class: 'story-banner'})
+    .context_common.context_common_story
+      ul.story_list_header
         li.active(data-type="all") 全部
         li(data-type="life") 人生故事
         li(data-type="family") 亲情故事
         li(data-type="philosophy") 哲理故事
         li(data-type="love") 爱情故事
       .join_content_box
-  script(src="../../static/js/joinus.js")
+  script(src="../../static/js/story.js")

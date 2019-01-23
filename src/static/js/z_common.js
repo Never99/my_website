@@ -5,7 +5,7 @@ $(function () {
     $(".list_a a").eq(0).addClass("active");
   } else if ($("#about").length == 1) {
     $(".list_a a").eq(1).addClass("active");
-  } else if ($("#joinus").length == 1) {
+  } else if ($("#story").length == 1 || $(".context_common_detail").length == 1) {
     $(".list_a a").eq(2).addClass("active");
   } else if ($('#newscenter').length == 1) {
     $(".list_a a").eq(3).addClass("active");
@@ -20,7 +20,7 @@ $(function () {
   // 切换页面
   $(".list_a a").click(function (e) {
     e.preventDefault();
-    window.sessionStorage.removeItem("joinus_list_ind");
+    window.sessionStorage.clear();
     var hrefs = $(this).data("href");
     $(".content_wrapper").removeClass("content_wrapper_menu");
     $(".footer").removeClass("footer_menu");
