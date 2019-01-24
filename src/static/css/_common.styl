@@ -19,7 +19,7 @@ html, body
   position: fixed
   top: 0
   left: 0
-  z-index: 10
+  z-index: 100000
   width: 100%
   height: 56px
   line-height: 56px
@@ -116,6 +116,10 @@ html, body
 
   h1
     responsiveStyle(font-size, 1.5rem, 32px)
+h2.style_two
+  line-height: 80px
+  text-align: center
+  responsiveStyle(font-size, 1.1rem, 20px)
 .context_common
   responsiveStyle(padding, 1rem 0, 50px 0)
   responsiveStyle(max-width, 87%, 1200px)
@@ -123,10 +127,14 @@ html, body
   h3
     line-height: 80px
     text-align: center
+    // display: flex
+    // justify-content: center
+    // align-items: center
   p
     text-indent: 2em
     line-height: 24px
     margin-bottom: 20px
+    font-size: 14px
 // 页脚
 .footer
   color: #888

@@ -55,9 +55,11 @@ $(function () {
         var html = `<div class="list_story">`;
         getDatas.forEach(val => {
           html += `<div data-id=${val.id} data-type=${val.type}>
-            <img src="${val.imgUrl}"/>
-            <a href="./detail?id=${val.id}" title="${val.title}">${val.title}</a>
-            <p title="${val.philosophy}">${val.philosophy}</p>
+            <a href="./detail?id=${val.id}" title="${val.title}">
+              <img src="${val.imgUrl}"/>
+              <b title="${val.title}">${val.title}</b>
+              <p title="${val.philosophy}">${val.philosophy}</p>
+            </a>
           </div>`;
         });
         html += `</div>`;

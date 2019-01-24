@@ -3,12 +3,23 @@
   .story_detail_context
     responsiveStyle(padding, 0, 0 50px)
     position: relative
+    .child_title
+      text-align: right
+      responsiveStyle(margin-right, 0, 100px)
+      font-size: 14px
+      color: #999
+      b
+        font-weight: normal
     .to_back
       position: absolute
-      width: 60px
-      height: 30px
+      responsiveStyle(width, 3rem, 60px)
+      responsiveStyle(height, 3rem, 60px)
       right: 0
-      top: 20px
+      responsiveStyle(bottom, -2rem, -60px)
+      border: none
+      border-radius: 100%
+      cursor: pointer
+      outline: none
     h2
       line-height: 60px
       text-align: center
