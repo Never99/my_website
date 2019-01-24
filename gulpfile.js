@@ -65,7 +65,7 @@ gulp.task("minifyJs", function () {
 
 // 压缩图片
 gulp.task('images', function () {
-  return gulp.src('./src/static/images/*')
+  return gulp.src('./src/static/images/**/*')
     .pipe(imageMin({progressive: true}))
     .pipe(gulp.dest('./dist/static/images/'));
 })
@@ -86,7 +86,7 @@ gulp.task("musics", function() {
 gulp.task('watch', function () {
   gulp.watch('./src/static/css/*.styl', ['stylus'])
   gulp.watch('./src/static/js/*.js', ['minifyJs'])
-  gulp.watch('./src/static/images/*', ['images'])
+  gulp.watch('./src/static/images/**/*', ['images'])
   gulp.watch('./src/static/musics/*', ['musics'])
   gulp.watch('./src/views/**/*.jade', ['jade2html'])
 })
