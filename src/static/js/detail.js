@@ -15,12 +15,15 @@ $(function() {
       },
       dataType: "json",
       success: function (result) {
-        console.log(result)
-        var html = `<h2>${result.title}</h2><div class="child_title"><b>—— ${result.childTitle}</b></div><img src="${result.imgUrl}" />`;
+        var html = `<div><h2>${result.title}</h2><div class="child_title"><b>—— ${result.childTitle}</b></div><img src="${result.imgUrl}" />`;
+        if (result.type == "love") {
+          html = `<div class="love_detail"><h2>${result.title}</h2><div class="child_title"><b>—— ${result.childTitle}</b></div><img src="${result.imgUrl}" />`;
+        }
         var pHtml = result.pHtml;
         pHtml.forEach(val => {
           html += `<p>${val.text}</p>`;
         });
+        html += "</div>";
         $(".story_detail_context").append(html);
       }
     })
