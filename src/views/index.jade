@@ -9,6 +9,8 @@ block content
       .canvas_home
         canvas.raining
         .backimg
-        audio#audio(loop="loop", preload="auto")
-          source(src="../static/musics/light_years_away.mp3" type="audio/mpeg")
+      .bg_music(style="height: 0;")
+        embed(src="../static/musics/light_years_away.mp3" loop="true")
+        //- video#audio(loop="loop", preload="auto")
+          //- source(src="../static/musics/light_years_away.mp3" type="video/mpeg")
   script(src="../static/js/home.js")
